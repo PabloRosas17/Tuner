@@ -1,0 +1,75 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="interview.android.tuner">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Main Activity is an Application component, Koin -->
+    <application
+        android:name="interview.android.tuner.core.MainActivity"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppMaterialTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- AppCompatActivity ViewComingSoon -->
+        <activity
+            android:name="interview.android.tuner.view.ViewComingSoon"
+            android:theme="@style/AppMaterialTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- AppCompatActivity ViewHotTracks -->
+        <activity
+            android:name="interview.android.tuner.view.ViewHotTracks"
+            android:theme="@style/AppMaterialTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- AppCompatActivity ViewNewReleases -->
+        <activity
+            android:name="interview.android.tuner.view.ViewNewReleases"
+            android:theme="@style/AppMaterialTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- AppCompatActivity ViewTopAlbums -->
+        <activity
+            android:name="interview.android.tuner.view.ViewTopAlbums"
+            android:theme="@style/AppMaterialTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- AppCompatActivity ViewTopSongs -->
+        <activity
+            android:name="interview.android.tuner.view.ViewTopSongs"
+            android:theme="@style/AppMaterialTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- AppCompatActivity ViewTappedSingle -->
+        <activity
+            android:name="interview.android.tuner.view.ViewFocused"
+            android:theme="@style/AppMaterialTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

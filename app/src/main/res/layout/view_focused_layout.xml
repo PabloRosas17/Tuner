@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="mViewModel"
+            type="interview.android.tuner.controller.adapter.RecyclerViewAdapter"/>
+        <variable
+            name="mPresenter"
+            type="interview.android.tuner.view.presenter.PresenterTappedSingle"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/material_focused_title_tv"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/material_toolbar_height"
+            android:text="Tuner - Foucused"
+            android:textColor="@color/colorGhostWhite"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@id/top_guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="0.5">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+                <ImageView
+                    android:id="@+id/material_tv_focused_art_work"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.70"
+                    android:gravity="center"
+                    android:background="@color/colorDark"
+                    android:contentDescription="@string/apple_api_img_description" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/material_tv_focused_music_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.10"
+                    android:gravity="left|center"
+                    android:text="Artist Name, Genre, Release Date"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorPrimaryDark"/>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/material_tv_focused_copyright"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.10"
+                    android:gravity="left|center"
+                    android:text="Copyright"
+                    android:textSize="11sp"
+                    android:textColor="@color/colorPrimaryDark"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/material_btn_online"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.10"
+                    android:text="See it online"
+                    android:onClick="@{() -> mPresenter.fireOnPresenter()}"
+                    style="@style/MaterialTheme.Button"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btm_nav_view_focused"
+            style="@style/MaterialTheme.MtrlBtmNav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btm_nav_guideline"
+            app:menu="@menu/bottom_navigation_menu" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="120dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.90"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/btm_nav_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.93"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:text="@string/app_name"
+            android:textColor="@color/colorLight"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:layout_constraintEnd_toEndOf="@id/top_tv_title_right_guideline"
+            app:layout_constraintStart_toStartOf="@id/top_tv_title_left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/top_guideline"
+            app:layout_constraintBottom_toTopOf="parent"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_tv_title_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.25"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_tv_title_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.75"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="Inspired by Apple."
+            android:textColor="@color/colorLight"
+            android:textSize="08sp"
+            android:gravity="center|right"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/top_tv_sub_right_guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/top_tv_sub_left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/top_guideline"
+            app:layout_constraintVertical_bias="0.333" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_tv_sub_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.75"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_tv_sub_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.99"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="mViewModel"
+            type="interview.android.tuner.view.ViewComingSoon"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorThinkBlue">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/material_coming_soon_title_tv"
+            style="@style/MaterialTheme.TextView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/material_toolbar_height"
+            android:text="Tuner - Coming Soon"
+            app:layout_constraintBottom_toTopOf="@id/top_guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/material_coming_soon_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="500dp"
+            android:scrollbars="vertical"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/top_guideline"
+            app:layout_constraintBottom_toTopOf="@id/bottom_guideline"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btm_nav_view_coming_soon"
+            style="@style/MaterialTheme.MtrlBtmNav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btm_nav_guideline"
+            app:menu="@menu/bottom_navigation_menu" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="120dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.90"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/btm_nav_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.93"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:text="@string/app_name"
+            android:textColor="@color/colorLight"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:layout_constraintEnd_toEndOf="@id/top_tv_title_right_guideline"
+            app:layout_constraintStart_toStartOf="@id/top_tv_title_left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/top_guideline"
+            app:layout_constraintBottom_toTopOf="parent"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_tv_title_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.25"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_tv_title_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.75"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="Inspired by Apple."
+            android:textColor="@color/colorLight"
+            android:textSize="08sp"
+            android:gravity="center|right"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/top_tv_sub_right_guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/top_tv_sub_left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/top_guideline"
+            app:layout_constraintVertical_bias="0.333" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_tv_sub_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.75"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_tv_sub_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintGuide_percent="0.99"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
